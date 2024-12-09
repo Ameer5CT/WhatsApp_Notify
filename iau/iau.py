@@ -19,7 +19,7 @@ def open_driver():
         profile_dir = os.path.join(current_dir, "iau_profile")
 
         driver = Driver(uc=True, user_data_dir=profile_dir)
-        driver.uc_open_with_reconnect("https://ubis.aydin.edu.tr/?Pointer=Main&", 4)
+        driver.uc_open_with_reconnect("https://ubis.aydin.edu.tr/?Pointer=Main&ucLang=TR", 4)
         driver.uc_gui_click_captcha()
 
         driver.set_window_size(300, 300)
@@ -32,7 +32,7 @@ def open_driver():
 
 def check_lesson_announcement(driver):
     try:
-        driver.get("https://ubis.aydin.edu.tr/?Pointer=Main&")
+        driver.get("https://ubis.aydin.edu.tr/?Pointer=Main&ucLang=TR")
         time.sleep(5)
         lesson_announcement = driver.find_element(By.ID, "content-2").find_element(By.ID, "lnews_0")
         global saved_lesson_announcement

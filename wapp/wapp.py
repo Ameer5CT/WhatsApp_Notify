@@ -34,9 +34,8 @@ def send_msg(receiver, msg):
             driver.set_window_size(1, 1)
             driver.set_window_position(-2000, 0)
             driver.minimize_window()
-            time.sleep(30)
-        else:
-            time.sleep(60)
+        
+        time.sleep(60)
 
         # Search for the receiver
         search_box = driver.find_element(By.XPATH, '//div[@contenteditable="true"][@data-tab="3"]')
