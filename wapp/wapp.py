@@ -59,5 +59,6 @@ def send_msg(receiver, msg):
         driver.quit()
 
         return True
-    except:
+    except Exception as e:
+        print(f"Error send_msg(receiver, msg): {e}")
         return False
